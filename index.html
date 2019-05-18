@@ -182,6 +182,19 @@
         
             
 
+        }function reset(){
+            
+            
+            
+               ONIM.value = "";
+               ONamaMahasiswa.value = "";
+               OJurusan.value = "";
+               OJenisKelamin.value = "";
+               OTempatLahir.value = "";
+               OTanggal.value = "";
+               OAlamat.value = "";
+               ONoTelp.value = "";
+               OEmail.value = "";  
         }
 
     </script>
@@ -391,7 +404,7 @@
                     <button type="button" class="btn btn-outline-success" onclick="Proses()">Proses</button>
                 </div>
                 <div class="col-auto">
-                    <button type="reset" class="btn btn-outline-primary">Clear</button>
+                    <button type="reset" class="btn btn-outline-primary" onclick="reset()">Clear</button>
                 </div>
             </div>
         </div>
