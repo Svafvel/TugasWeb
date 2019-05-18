@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css"/>
 
     <script type="text/javascript">
-
-        function Proses(){
-
+        
             var NIM = document.getElementsByClassName('NIM')[0];
             var NamaMahasiswa = document.getElementsByClassName('NamaMahasiswa')[0];
             var Jurusan = document.getElementsByClassName('PilihJurusan')[0];
@@ -33,6 +31,8 @@
             var OAlamat = document.getElementsByClassName('OAlamat')[0];
             var ONoTelp = document.getElementsByClassName('ONoTelp')[0];
             var OEmail = document.getElementsByClassName('OEmail')[0];
+
+        function Proses(){
 
             var Data = {'NIM' : NIM, 'Nama Mahasiswa' : NamaMahasiswa, 'Jurusan' : Jurusan, 'Jenis Kelamin' : [Laki, Perempuan], 'Tempat Lahir' : TempatLahir,'Tanggal Lahir' : [Hari,Bulan,Tahun], 'Alamat' : Alamat, 'No Telpon': NoTelp, 'Email' : Email};
             var DataString = ['NIM','Nama Mahasiswa','Jurusan','Jenis Kelamin','Tempat Lahir','Tanggal Lahir','Alamat','No Telpon','Email'];
