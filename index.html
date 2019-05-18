@@ -1,0 +1,367 @@
+<html>
+<head>
+    <title>Tugas Web Design</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatitble" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <script type="text/javascript">
+
+        function Proses(){
+
+            var NIM = document.getElementsByClassName('NIM')[0];
+            var NamaMahasiswa = document.getElementsByClassName('NamaMahasiswa')[0];
+            var Jurusan = document.getElementsByClassName('PilihJurusan')[0];
+            var Laki = document.getElementsByClassName('LakiLaki')[0];
+            var Perempuan = document.getElementsByClassName('Perempuan')[0];
+            var TempatLahir = document.getElementsByClassName('TempatLahir')[0];
+            var Hari = document.getElementsByClassName('PilihDate')[0];
+            var Bulan = document.getElementsByClassName('PilihMonth')[0];
+            var Tahun = document.getElementsByClassName('PilihYear')[0];
+            var Alamat = document.getElementsByClassName('Alamat')[0];
+            var NoTelp = document.getElementsByClassName('NoTelp')[0];
+            var Email = document.getElementsByClassName('Email')[0];
+
+            var ONIM = document.getElementsByClassName('ONIM')[0];
+            var ONamaMahasiswa = document.getElementsByClassName('ONamaMahasiswa')[0];
+            var OJurusan= document.getElementsByClassName('OJurusan')[0];
+            var OJenisKelamin = document.getElementsByClassName('OJenisKelamin')[0];
+            var OTempatLahir = document.getElementsByClassName('OTempatLahir')[0];
+            var OTanggal = document.getElementsByClassName('OTanggalLahir')[0];
+            var OAlamat = document.getElementsByClassName('OAlamat')[0];
+            var ONoTelp = document.getElementsByClassName('ONoTelp')[0];
+            var OEmail = document.getElementsByClassName('OEmail')[0];
+
+            var Data = {'NIM' : NIM, 'Nama Mahasiswa' : NamaMahasiswa, 'Jurusan' : Jurusan, 'Jenis Kelamin' : [Laki, Perempuan], 'Tempat Lahir' : TempatLahir,'Tanggal Lahir' : [Hari,Bulan,Tahun], 'Alamat' : Alamat, 'No Telpon': NoTelp, 'Email' : Email};
+            var DataString = ['NIM','Nama Mahasiswa','Jurusan','Jenis Kelamin','Tempat Lahir','Tanggal Lahir','Alamat','No Telpon','Email'];
+            var Keluaran = "";
+            var JenisKelamin = "";
+
+            for (var i = 0; i < DataString.length; i++){
+
+                if (i < 3){
+
+                    if (Data[DataString[i]].value == ""){
+
+                        Keluaran = Keluaran + " " + DataString[i];
+
+                    }
+
+                }else if (i == 3){
+
+                    if (Data[DataString[3]][0].checked == false){
+
+                        if (Data[DataString[3]][1].checked == false){
+
+                            Keluaran = Keluaran + " " + DataString[i];
+
+                        }else {
+
+                            JenisKelamin = 'Perempuan';
+
+                        }
+
+                    }else {
+
+                        JenisKelamin = 'Laki - Laki';
+
+                    }
+
+                }else if (i == 4){
+
+                    if (Data[DataString[4]].value == ""){
+
+                        Keluaran = Keluaran + " " + DataString[i];
+
+                    }
+
+                }else if ( i == 5){
+
+                    if (Data[DataString[5]][0].value == ""){
+
+                        if (Data[DataString[5]][1].value == ""){
+
+                            if (Data[DataString[5]][2].value == ""){
+
+                                Keluaran = Keluaran + " " + DataString[i];
+
+                            }
+
+                        }
+
+                    }
+
+                }else if ( i == 6 ){
+
+                    if (Data[DataString[i]].value == ""){
+
+                        Keluaran = Keluaran + " " + DataString[i];
+
+                    }
+
+                }else if ( i == 7 ){
+
+                    if (Data[DataString[i]].value  == ""){
+
+                        Keluaran = Keluaran + " " + DataString[i];
+
+                    }
+
+                }else if ( i == 8 ){
+
+                    if (Data[DataString[i]].value == ""){
+
+                        Keluaran = Keluaran + " " + DataString[i];
+
+                    }
+
+                }
+            }
+
+            if (Keluaran != ""){
+
+                alert('Silakan Lengkapi Data ' + Keluaran);
+
+            }
+
+            ONIM.value = NIM.value;
+            ONamaMahasiswa.value = NamaMahasiswa.value;
+            OJurusan.value = Jurusan.value;
+            OJenisKelamin.value = JenisKelamin;
+            OTempatLahir.value = TempatLahir.value;
+            OTanggal.value = Hari.value + " " + Bulan.value + " " + Tahun.value;
+            OAlamat.value = Alamat.value;
+            ONoTelp.value = NoTelp.value;
+            OEmail.value = Email.value;  
+
+        
+            
+
+        }
+
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h3>Selamat Datang</h3>
+            <p>Silakan Isi Data Lengkap Anda Dibawah Ini !!</p>
+        </div>
+    </div>
+    <form action="">
+        <div class="container">
+            <!-- Awal Form Samping Kiri -->
+            <div class="row">
+                <div class="col-sm-7" style="margin-top: 50px">
+                    <h2 class="text-center" style="margin-bottom: 50px">Masukan Data Mahasiswa</h2>
+                    <form>
+                        <div class="row form-group">
+                            <label class="col-sm-4 col-form-label">NIM</label>
+                            <div class="col-sm-7 ">
+                                <input type="text" class="form-control NIM" id="NIM">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label  class="col-sm-4 col-form-label">Nama Mahasiswa</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control NamaMahasiswa">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label  class="col-sm-4 col-form-label">Jurusan</label>
+                            <div class="col-sm-7">
+                                <select class="form-control PilihJurusan" id="exampleFormControlSelect1" name="pilihJurusan">
+                                    <option value="">- Jurusan Anda -</option>
+                                    <option value="Informatika Komputer">Informatika Komputer</option>
+                                    <option value="Teknik Informatika">Teknik Informatika</option>
+                                    <option value="Akutansi Perkantoran">Akutansi Perkantoran</option>
+                                    <option value="Administrasi Bisnis Internasional">Administrasi Bisnis Internasional</option>
+                                    <option value="Komputer Akutansi">Komputer Akutansi</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label  class="col-sm-4 col-form-label">Jenis Kelamin</label>
+                            <div class="col-sm-3">
+                                <div class="form-check">
+                                <input class="form-check-input LakiLaki" type="radio" name="exampleRadios" value="Laki-Laki">
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Laki-Laki
+                                </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                <input class="form-check-input Perempuan" type="radio" name="exampleRadios"  value="Perempuan">
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Perempuan
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label  class="col-sm-4 col-form-label">Tempat Lahir</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control TempatLahir">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label  class="col-sm-4 col-form-label">Tanggal Lahir</label>
+                            <div class="col-sm-auto">
+                            <select class="form-control PilihDate" id="exampleFormControlSelect1" name="pilihanDate">
+                                <option value="">Hari</option>
+                                <script type="text/javascript">
+
+                                        var Tanggal = new Array(31);
+
+                                        for (var i = 0; i < Tanggal.length; i++){
+                                            Tanggal[i] = i + 1;
+                                            document.write("<option>" + Tanggal[i] + "</option>");
+
+                                        }
+                                    </script>
+                            </select> 
+                            </div>
+                            <div class="col-sm-auto">
+                            <select class="form-control PilihMonth" id="exampleFormControlSelect1" name="pilihanMonth">
+                                <option value="">Bulan</option>
+                                <script type="text/javascript">
+                                    
+                                        var Bulan = ['Januari', 'Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+
+                                        for (var i = 0; i < Bulan.length; i++){
+                                            document.write("<option>" + Bulan[i] + "</option>");
+
+                                        }
+
+                                    </script>
+                            </select> 
+                            </div>
+                            <div class="col-sm-auto">
+                            <select class="form-control PilihYear" id="exampleFormControlSelect1" name="pilihanYear">
+                                <option value="">Tahun</option>
+                                <script type="text/javascript">
+
+                                        var Tahun = new Array(50);
+
+                                        for (var i = 0; i < Tahun.length; i++){
+                                            Tahun[i] = 1970 + i;
+                                            document.write("<option>" + Tahun[i] + "</option>");
+
+                                        }
+
+                                    </script>
+                            </select> 
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="exampleFormControlTextarea1" class="col-sm-4">Alamat</label>
+                            <div class="col-sm-7">
+                                <textarea class="form-control Alamat" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="staticNumber" class="col-sm-4 col-form-label">No Telp</label>
+                            <div class="col-sm-7">
+                                <input type="text/number" class="form-control NoTelp">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                            <div class="col-sm-7">
+                                <input type="email" class="form-control Email">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            <!--   Akhir Form Samping Kiri -->
+                <div class="col-sm-5" style="margin-top: 50px">
+                    <h2 class="text-center" style="margin-bottom: 50px">Keluaran Data Mahasiswa</h2>
+                    <form>
+                        <div class="row form-group">
+                            <label class="col-sm-4 col-form-label">NIM</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control ONIM">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label  class="col-sm-4 col-form-label">Nama Mahasiswa</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control ONamaMahasiswa">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-4 col-form-label">Jurusan</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control OJurusan">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label  class="col-sm-4 col-form-label">Jenis Kelamin</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control OJenisKelamin">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label  class="col-sm-4 col-form-label">Tempat Lahir</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control OTempatLahir">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label  class="col-sm-4 col-form-label">Tanggal Lahir</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control OTanggalLahir">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="exampleFormControlTextarea1" class="col-sm-4">Alamat</label>
+                            <div class="col-sm-7">
+                                <textarea class="form-control OAlamat" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="staticNumber" class="col-sm-4 col-form-label">No Telp</label>
+                            <div class="col-sm-7">
+                                <input type="text/number" class="form-control ONoTelp">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                            <div class="col-sm-7">
+                                <input type="email" class="form-control OEmail">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br><br>
+            <!--   Akhir Form Samping Kanan -->
+
+            <div class="row" style="margin-bottom:50px">
+                <div class="col-sm-5"></div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-outline-success" onclick="Proses()">Proses</button>
+                </div>
+                <div class="col-auto">
+                    <button type="reset" class="btn btn-outline-primary">Clear</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    <script src="bootstrap/jquery/jquery.js"></script>
+    <script src="bootstrap/popper/popper.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+<!--     <script src="js/script.js"></script> -->
+</body>
+</html>
+
