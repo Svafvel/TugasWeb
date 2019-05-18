@@ -9,6 +9,10 @@
 
     <script type="text/javascript">
         
+
+
+        function Proses(){
+            
             var NIM = document.getElementsByClassName('NIM')[0];
             var NamaMahasiswa = document.getElementsByClassName('NamaMahasiswa')[0];
             var Jurusan = document.getElementsByClassName('PilihJurusan')[0];
@@ -31,8 +35,6 @@
             var OAlamat = document.getElementsByClassName('OAlamat')[0];
             var ONoTelp = document.getElementsByClassName('ONoTelp')[0];
             var OEmail = document.getElementsByClassName('OEmail')[0];
-
-        function Proses(){
 
             var Data = {'NIM' : NIM, 'Nama Mahasiswa' : NamaMahasiswa, 'Jurusan' : Jurusan, 'Jenis Kelamin' : [Laki, Perempuan], 'Tempat Lahir' : TempatLahir,'Tanggal Lahir' : [Hari,Bulan,Tahun], 'Alamat' : Alamat, 'No Telpon': NoTelp, 'Email' : Email};
             var DataString = ['NIM','Nama Mahasiswa','Jurusan','Jenis Kelamin','Tempat Lahir','Tanggal Lahir','Alamat','No Telpon','Email'];
@@ -186,17 +188,25 @@
         
         function hapus(){
             
+            var ONIM = document.getElementsByClassName('ONIM')[0];
+            var ONamaMahasiswa = document.getElementsByClassName('ONamaMahasiswa')[0];
+            var OJurusan= document.getElementsByClassName('OJurusan')[0];
+            var OJenisKelamin = document.getElementsByClassName('OJenisKelamin')[0];
+            var OTempatLahir = document.getElementsByClassName('OTempatLahir')[0];
+            var OTanggal = document.getElementsByClassName('OTanggalLahir')[0];
+            var OAlamat = document.getElementsByClassName('OAlamat')[0];
+            var ONoTelp = document.getElementsByClassName('ONoTelp')[0];
+            var OEmail = document.getElementsByClassName('OEmail')[0];
             
-            
-               ONIM.value = "";
-               ONamaMahasiswa.value = "";
-               OJurusan.value = "";
-               OJenisKelamin.value = "";
-               OTempatLahir.value = "";
-               OTanggal.value = "";
-               OAlamat.value = "";
-               ONoTelp.value = "";
-               OEmail.value = "";  
+            ONIM.value = "";
+            ONamaMahasiswa.value = "";
+            OJurusan.value = "";
+            OJenisKelamin.value = "";
+            OTempatLahir.value = "";
+            OTanggal.value = "";
+            OAlamat.value = "";
+            ONoTelp.value = "";
+            OEmail.value = "";  
         }
 
     </script>
