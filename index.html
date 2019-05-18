@@ -87,21 +87,48 @@
 
                                 Keluaran = Keluaran + " " + DataString[i];
 
+                            }else if(Data[DataString[5]][0].value == "" && Data[DataString[5]][2].value == ""){
+                                
+                                Keluaran = Keluaran + " Hari dan Bulan ";
+                                
+                            }else if (Data[DataString[5]][0].value == "" ){
+                             
+                                Keluaran = Keluaran + " Hari ";
+                                
                             }else {
                                 
-                                Keluaran = Keluaran + " Tahun ";
+                                Keluaran = Keluaran = " Bulan "
                                 
                             }
 
+                        }else if (Data[DataString[5]][0].value == "" && Data[DataString[5]][2].value == ""){
+                         
+                            Keluaran = Keluaran + " Hari dan Tahun ";
+                            
+                        }else if (Data[DataString[5]][0].value == ""){
+                            
+                            Keluaran = Keluaran + " Hari ";
+                            
                         }else {
                          
-                            Keluaran = Keluaran + " Bulan ";
+                            Keluaran = Keluaran + " Tahun ";
                             
                         }
 
                     }else {
                         
-                        Keluaran = Keluaran + " Hari "; 
+                        if (Data[DataString[5]][1].value == "" && Data[DataString[5]][2].value == ""){
+                            
+                            Keluaran = Keluaran + " Bulan dan Tahun "
+                            
+                        }else if ((Data[DataString[5]][1].value == ""){
+                              
+                             Keluaran = Keluaran + " Tahun ";
+                        }else {
+                            
+                              Keluaran = Keluaran + " Bulan ";
+                                  
+                        }
                         
                     }
 
